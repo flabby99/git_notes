@@ -4,17 +4,23 @@
 To create a repository, move to the location that you wish the repository to be in and then use the command git init. If using github, pull and push are used to sync the remote and local repository, with pull going remote -> local and push vice versa. To contribute to other projects, fork the project, clone the project, commit to the fork, push the fork, then make a pull request which the project owner/admin can approve.
 
 ## Adding aliases and configuration:
-These commands let you change the information about yourself. As a general the $ are just indicating new lines in bash.
-$ git config --global user.name "John Doe"
-$ git config --global user.email johndoe@example.com
-$ git config –list
-The latter is particularly useful for checking your aliases. However if you would like to see only the aliases you can use “git config --get-regexp alias”. To create an alias to check your aliases use:
-$: git config --global alias.aliases 'config --get-regexp alias'
-And now git aliases will display all your git aliases to you!
-It is possible to create aliases for commands, as a shortcut name, for example: 
-$git config --global alias.co checkout
-I maintain a list of git aliases that I find useful here https://gist.github.com/seankmartin/bc479ba899cf419c7f79d67c84a62a91.
-There is also a small number of config settings that I find useful here https://gist.github.com/seankmartin/8c711d1f49cc2958dd6c9c46aa7e51b2.
+These commands let you change the information about yourself.
+```
+git config --global user.name "John Doe"
+git config --global user.email johndoe@example.com
+git config –list
+```
+It is possible to create aliases for commands, as a shortcut name:
+```
+git config --global alias.co checkout
+git config --get-regexp alias
+git config --global alias.aliases 'config --get-regexp alias'
+```
+The second command lists all of your aliases.
+The last command sets up an alias so that `git aliases` will display all your aliases!
+
+I maintain a [list of git aliases](https://gist.github.com/seankmartin/bc479ba899cf419c7f79d67c84a62a91) that I find useful.
+There is also a small number of [config settings](https://gist.github.com/seankmartin/8c711d1f49cc2958dd6c9c46aa7e51b2) that I find useful. 
 
 ## Staging and committing
 To add files to a commit use git add, to commit, use commit and status to check status. You can use git add -a to automatically stage all files that have been modified or deleted and commit that. You can also use git commit -m "message" to submit a commit message while committing without having to open a text editor. If you want to add all files to commit, including new files, you could use:
